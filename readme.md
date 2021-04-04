@@ -1,3 +1,4 @@
+###### A time picker customizable library written in react-native with some good looking animation 😉.Easy to use and customize.Frame per second is almost 60 on ios and 48 on android. 
 # React native time picker
 > # Installation
 > npm i rnative-picker
