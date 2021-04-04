@@ -1,0 +1,27 @@
+{
+  "name": "rnative-picker",
+  "version": "1.0.1",
+  "description": "A simple react-native timer picker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/git-kishan/rnative-picker.git"
+  },
+  "keywords": [
+    "time-picker",
+    "react-native-picker",
+    "react-native-timepicker",
+    "picker",
+    "react-native-time-picker",
+    "time-picker"
+  ],
+  "author": "@kishan  kishankumar001122@gmail.com @github.com/git-kishan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/git-kishan/rnative-picker/issues"
+  },
+  "homepage": "https://github.com/git-kishan/rnative-picker#readme"
+}
