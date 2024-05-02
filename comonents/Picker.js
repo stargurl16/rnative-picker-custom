@@ -71,20 +71,21 @@ const TimePicker = ({show, onClose,animationType,...props}) => {
   if(!show)return null;
 
   return (
-    <View style={[styles.root,{position:'absolute'}]}>
-      <Modal animationType={animationType} transparent={true} visible={show}>
-        <View style={styles.root}>
+    <View style={[styles.root,{position:'relative', width:'100%'}]}>
+      <View animationType={animationType} transparent={true} visible={show} >
+        <View style={[styles.root, {padding:0,}]}>
           <View style={[styles.timePicker,props.pickerStyle]}>
             <View style={styles.indicator} pointerEvents="none" />
             <List data={hour} scrollY={hourScrollY} type="hour"/>
             <List data={minute} scrollY={minuteScrollY} type="minute"/>
             <List data={clock} scrollY={clockScrollY} type="clock"/>
+            
           </View>
           <TouchableOpacity onPress={closePicker} style={[styles.cancelButton,props?.cancelButtonStyle]}>
-            <Text style={[styles.cancelButtonText,props?.cancelButtonTextStyle]}>Cancel</Text>
+            <Text style={[styles.cancelButtonText,props?.cancelButtonTextStyle]}>Set</Text>
           </TouchableOpacity>
         </View>
-      </Modal>
+      </View>
     </View>
   );
 };
@@ -94,9 +95,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    
+    
   },
   timePicker: {
     height: '35%',
+    
     width: '80%',
     backgroundColor: 'rgba(245, 247, 250,1)',
     justifyContent: 'center',
@@ -108,6 +112,7 @@ const styles = StyleSheet.create({
   cancelButton: {
     width: '80%',
     height: 50,
+    bottom:265,
     backgroundColor: 'rgba(0, 86, 247,0.1)',
     marginTop: 8,
     justifyContent: 'center',
@@ -124,7 +129,7 @@ const styles = StyleSheet.create({
   },
   listTextView: {
     height: ITEM_HEIGHT,
-    width: ITEM_WIDTH,
+    width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -135,13 +140,14 @@ const styles = StyleSheet.create({
   indicator: {
     height: 40,
     width: '100%',
-    borderTopWidth: 2,
-    borderBottomWidth: 2,
-    backgroundColor: 'transparent',
+    borderTopWidth: 0,
+    borderBottomWidth: 0,
+    backgroundColor:  "#777ebb",
+   
     position: 'absolute',
     zIndex: 5,
     elevation: 5,
-    opacity: 0.1,
+    opacity: 0.5,
   },
 });
 
