@@ -75,10 +75,10 @@ const TimePicker = ({show, onClose,animationType,...props}) => {
       <View animationType={animationType} transparent={true} visible={show} >
         <View style={[styles.root, {padding:0,}]}>
           <View style={[styles.timePicker,props.pickerStyle]}>
-            <View style={styles.indicator} pointerEvents="none" />
-            <List data={hour} scrollY={hourScrollY} type="hour"/>
-            <List data={minute} scrollY={minuteScrollY} type="minute"/>
-            <List data={clock} scrollY={clockScrollY} type="clock"/>
+            <View style={styles.indicator} pointerEvents="none" pickerTextStyle={props.pickerTextStyle} />
+            <List data={hour} scrollY={hourScrollY} type="hour" pickerTextStyle={props.pickerTextStyle}/>
+            <List data={minute} scrollY={minuteScrollY} type="minute" pickerTextStyle={props.pickerTextStyle}/>
+            <List data={clock} scrollY={clockScrollY} type="clock" pickerTextStyle={props.pickerTextStyle}/>
             
           </View>
           <TouchableOpacity onPress={closePicker} style={[styles.cancelButton,props?.cancelButtonStyle]}>
@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    
     
     
   },
@@ -136,6 +137,7 @@ const styles = StyleSheet.create({
   listText: {
     fontSize: 22,
     fontWeight: '400',
+    color: 'white'
   },
   indicator: {
     height: 40,
