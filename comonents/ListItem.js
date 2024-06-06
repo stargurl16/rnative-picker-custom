@@ -3,7 +3,7 @@ import {Animated,Text,StyleSheet} from 'react-native';
 
 const ITEM_HEIGHT = 40;
 const ITEM_WIDTH = 40;
-const Item=({item,scaleInterpolator,opacityInterpolator,pickerTextStyle})=>{
+const Item=({item,scaleInterpolator,opacityInterpolator, pickerTextStyle})=>{
     return (
             <Animated.View
                 style={[
@@ -12,7 +12,7 @@ const Item=({item,scaleInterpolator,opacityInterpolator,pickerTextStyle})=>{
                     opacity: opacityInterpolator,
                 },
                 ]}>
-                  
+                    
                 <Text style={[styles.listText, pickerTextStyle]}>{item}</Text>
             </Animated.View>
     )
@@ -23,6 +23,7 @@ const styles=StyleSheet.create({
         width: ITEM_WIDTH,
         justifyContent: 'center',
         alignItems: 'center',
+
       },
       listText: {
         fontSize: 22,
