@@ -13,7 +13,7 @@ import List from './List';
 const ITEM_HEIGHT = 40;
 const ITEM_WIDTH = 40;
 
-const TimePicker = ({show, onClose,animationType,...props}) => {
+const TimePicker = ({show, pickerTextStyle, onClose,animationType,...props}) => {
 
 
   let hourScrollY = useRef(new Animated.Value(0)).current;
@@ -75,10 +75,10 @@ const TimePicker = ({show, onClose,animationType,...props}) => {
       <View animationType={animationType} transparent={true} visible={show} >
         <View style={[styles.root, {padding:0,}]}>
           <View style={[styles.timePicker,props.pickerStyle]}>
-            <View style={styles.indicator} pointerEvents="none" pickerTextStyle={props.pickerTextStyle} />
-            <List data={hour} scrollY={hourScrollY} type="hour" pickerTextStyle={props.pickerTextStyle}/>
-            <List data={minute} scrollY={minuteScrollY} type="minute" pickerTextStyle={props.pickerTextStyle}/>
-            <List data={clock} scrollY={clockScrollY} type="clock" pickerTextStyle={props.pickerTextStyle}/>
+            <View style={styles.indicator} pointerEvents="none" />
+            <List pickerTextStyle={pickerTextStyle}  data={hour} scrollY={hourScrollY} type="hour"/>
+            <List pickerTextStyle={pickerTextStyle} data={minute} scrollY={minuteScrollY} type="minute"/>
+            <List pickerTextStyle={pickerTextStyle} data={clock} scrollY={clockScrollY} type="clock"/>
             
           </View>
           <TouchableOpacity onPress={closePicker} style={[styles.cancelButton,props?.cancelButtonStyle]}>
@@ -95,7 +95,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    
     
     
   },
@@ -137,14 +136,13 @@ const styles = StyleSheet.create({
   listText: {
     fontSize: 22,
     fontWeight: '400',
-    color: 'white'
   },
   indicator: {
     height: 40,
     width: '100%',
     borderTopWidth: 0,
     borderBottomWidth: 0,
-    backgroundColor:  "#777ebb",
+    backgroundColor:  "#E68234",
    
     position: 'absolute',
     zIndex: 5,
